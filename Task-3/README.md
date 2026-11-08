@@ -16,6 +16,16 @@
 
 ---
 
+## Video Walkthroughs
+
+| Task | Video |
+|---|---|
+| Task 1: Data Cleaning & Preparation | [Watch on YouTube](https://youtu.be/Uq-i0Zj4JNo) |
+| Task 2: Exploratory Data Analysis | [Watch on YouTube](https://youtu.be/YpbkOTyGYrM) |
+| Task 3: Power BI Dashboard | [Watch on YouTube](https://youtu.be/1yWATsmKJFY) |
+
+---
+
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
 2. [Dashboard Preview](#2-dashboard-preview)

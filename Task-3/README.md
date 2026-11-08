@@ -60,16 +60,16 @@ The dashboard reads the Task 2 output directly. All business logic (totals, medi
 ## 2. Dashboard Preview
 
 ### Page 1: Overview
-![Overview](screenshots/Page_1_Overview.png)
+![Overview](Page_1_Overview.png)
 
 ### Page 2: Investors and Top Startups
-![Investors and Startups](screenshots/Page_2_Investors_and_Startups.png)
+![Investors and Startups](Page_2_Investors_and_Startups.png)
 
 ### Page 3: Industry and City Trends
-![Industry and City Trends](screenshots/Page_3_Industry_and_City_Trends.png)
+![Industry and City Trends](Page_3_Industry_and_City_Trends.png)
 
 ### Page 4: Data Notes and Limitations
-![Data Notes and Limitations](screenshots/Page_4_Data_and_Limitations.png)
+![Data Notes and Limitations](Page_4_Data_and_Limitations.png)
 
 > The full report is also available as a PDF export (`Indian_Startup_Funding_Dashboard.pdf`). Slicers and cross-filtering work only in the `.pbix` file opened in Power BI Desktop.
 
@@ -102,18 +102,16 @@ The original and the corrected amount are both kept in the fact table (`amount_o
 ## 4. Repository Structure
 
 ```
-SWYNEX-Interactive-Dashboard/
+Task-3/
+├── README.md                                # This document
 ├── Indian_Startup_Funding_Dashboard.pbix    # Power BI report (open in Power BI Desktop)
 ├── Indian_Startup_Funding_Dashboard.pdf     # Static 4-page export of the report
 ├── startup_funding_eda.csv                  # Fact table: 3,044 deals × 16 columns (Task 2 output)
 ├── investors_clean.csv                      # Investor table: one row per investor per deal
-├── screenshots/
-│   ├── Page_1_Overview.png
-│   ├── Page_2_Investors_and_Startups.png
-│   ├── Page_3_Industry_and_City_Trends.png
-│   └── Page_4_Data_and_Limitations.png
-├── README.md                                # This document
-└── LICENSE                                  # MIT license
+├── Page_1_Overview.png
+├── Page_2_Investors_and_Startups.png
+├── Page_3_Industry_and_City_Trends.png
+└── Page_4_Data_and_Limitations.png
 ```
 
 ---
@@ -411,11 +409,11 @@ These are also written on Page 4 of the dashboard.
 ## 11. How to Use
 
 **Option A: View only**
-1. Open `Indian_Startup_Funding_Dashboard.pdf` for a static copy of all four pages, or look at the images in `screenshots/`.
+1. Open `Indian_Startup_Funding_Dashboard.pdf` for a static copy of all four pages, or look at the PNG images in this folder.
 
 **Option B: Interactive**
 1. Install **Power BI Desktop** (free, Windows).
-2. Clone or download this repository.
+2. Clone or download this repository and open the `Task-3` folder.
 3. Open `Indian_Startup_Funding_Dashboard.pbix`.
 4. If Power BI asks for the data source, go to **Home → Transform data → Data source settings** and point `startup_funding_eda.csv` and `investors_clean.csv` to your local copies.
 5. Use the Industry, City and Investment Type dropdowns and the Year buttons. Click a bar, treemap block or table row to cross-filter the other visuals; click it again to clear the filter.
@@ -447,11 +445,11 @@ These are also written on Page 4 of the dashboard.
 
 ## 14. Project Series
 
-| Task | Repository / Document | Focus |
+| Task | Folder | Focus |
 |---|---|---|
-| Task 1 | Data Cleaning & Preparation | Missing values, data types, inconsistent labels, encoding junk |
-| Task 2 | Exploratory Data Analysis | Outlier audit, 11 corrections, six analyses |
-| **Task 3** | **This repository** | **Interactive Power BI dashboard with DAX** |
+| Task 1 | [Data Cleaning & Preparation](../Task-1/) | Missing values, data types, inconsistent labels, encoding junk |
+| Task 2 | [Exploratory Data Analysis](../Task-2/) | Outlier audit, 11 corrections, six analyses |
+| **Task 3** | **This folder** | **Interactive Power BI dashboard with DAX** |
 
 ---
 

@@ -54,6 +54,17 @@
 - **Six analyses** (year, industry, city, investor, funding stage, startup) with charts, findings and caveats written next to each result.
 - An **analysis-ready table of 3,044 rows × 16 columns** (`startup_funding_eda.csv`) that keeps both the corrected and the original amount, ready for the dashboard stage.
 
+### Project at a glance
+
+| Metric | Value |
+|---|---|
+| Funding rounds analysed | **3,044** (January 2015 to January 2020) |
+| Total disclosed funding (after corrections) | **$32.76B** (was $38.14B before) |
+| Wrong amounts found and corrected | **11** (about $5.4B removed) |
+| Deals with a disclosed amount | 2,073 (68.1%) |
+| Analyses completed | 6 (year, industry, city, investor, funding stage, startup) |
+| Charts | 6 |
+
 ---
 
 ## 2. Dataset
@@ -73,20 +84,20 @@
 ## 3. Repository Structure
 
 ```
-SWYNEX-Exploratory-Data-Analysis/
-├── cleaned_startup_funding.csv                              # Input: Task 1 output
-├── startup_funding_eda.csv                                  # Final analysis-ready data (16 columns)
-├── Indian_Startup_Funding_Exploratory_Data_Analysis.ipynb   # Full notebook with every step
+Task-2/
 ├── README.md                                                # This document
-├── LICENSE                                                  # MIT license
+├── Indian_Startup_Funding_Exploratory_Data_Analysis.ipynb   # Full notebook with every step
+├── startup_funding_eda.csv                                  # Final analysis-ready data (16 columns)
 └── images/                                                  # Charts used in this README
-    ├── 01_yearly_trend.png
-    ├── 02_top_industries.png
-    ├── 03_top_cities.png
-    ├── 04_top_investors.png
-    ├── 05_median_by_stage.png
-    └── 06_top_startups.png
+    ├── Year-Wise-Trend.png
+    ├── Industry-Wise_Funding.png
+    ├── City-Wise-Funding.png
+    ├── Top-Investors.png
+    ├── Funding-Stage.png
+    └── Top-Startups.png
 ```
+
+The input file `cleaned_startup_funding.csv` is the output of [Task 1](../Task-1/).
 
 ---
 
@@ -229,7 +240,7 @@ yr['missing_pct'] = (1 - yr.with_amount/yr.deals) * 100
 | 2019 | 111 | 105 | 5% | $4.42B | $6.24M |
 | 2020 | 7 | 7 | 0% | $0.39B | $9.00M |
 
-![Yearly trend](images/01_yearly_trend.png)
+![Yearly trend](images/Year-Wise-Trend.png)
 
 **Findings**
 - The number of deals falls every year after 2016 (993 to 111 in 2019), but the median deal size keeps rising ($1.0M in 2016 to $6.2M in 2019). Fewer, larger deals are what the data shows.
@@ -259,7 +270,7 @@ Deals were grouped by industry. Only industries with **at least 10 deals that ha
 | EdTech | 20 | 18 | $0.19B | $0.89M |
 | Education | 24 | 19 | $0.10B | $1.50M |
 
-![Top industries](images/02_top_industries.png)
+![Top industries](images/Industry-Wise_Funding.png)
 
 **Findings**
 - eCommerce ($8.0B) and Consumer Internet ($6.3B) together hold about **68%** of the top-10 industry funding.
@@ -306,7 +317,7 @@ df['city_clean'] = df.city.replace(city_fix)
 | Delhi NCR (New Delhi + Gurugram + Noida) | **899** | 571 | $8.26B |
 | Bengaluru | 851 | 593 | $14.60B |
 
-![Top cities](images/03_top_cities.png)
+![Top cities](images/City-Wise-Funding.png)
 
 **Findings**
 - Bengaluru leads with about $14.6B, roughly half of the top-10 city total ($29.7B). Mumbai ($4.8B) is second among single cities.
@@ -358,7 +369,7 @@ Merging the variants changes the ranking: **Sequoia Capital rose from 72 to 112 
 | 9 | Matrix Partners | 34 |
 | 10 | Ratan Tata | 31 |
 
-![Top investors](images/04_top_investors.png)
+![Top investors](images/Top-Investors.png)
 
 **Findings**
 - Sequoia Capital (112 deals) and Accel Partners (84) are the most active investors, well ahead of Tiger Global (52).
@@ -392,7 +403,7 @@ Deals were grouped by investment type (the 4 `Unknown` rows are excluded).
 
 The chart shows only Seed/Angel and Series A to D, where there are enough deals. `Private Equity` is left out because it is a mixed group.
 
-![Median deal size by stage](images/05_median_by_stage.png)
+![Median deal size by stage](images/Funding-Stage.png)
 
 **Findings**
 - Private Equity holds about **84%** of the $32.76B total, while Seed/Angel has the most deals (1,542) but only about **1.5%** of the money.
@@ -444,7 +455,7 @@ df['startup_clean'] = df.startup_clean.replace(brand_fix)
 | 9 | Zomato | 4 | 4 | $0.44B |
 | 10 | PolicyBazaar | 4 | 4 | $0.34B |
 
-![Top startups](images/06_top_startups.png)
+![Top startups](images/Top-Startups.png)
 
 **Findings**
 - Flipkart ($4.76B), Paytm ($3.15B) and Ola ($2.05B) are the top three. Together they hold about **69%** of the top-10 funding ($9.96B of $14.35B).
@@ -482,6 +493,24 @@ Working columns used only to hunt for errors (`suspect`, `to_verify`, `outlier`)
 | 5 | **Most active investors.** Sequoia Capital (112 deals) and Accel Partners (84) lead, well ahead of Tiger Global (52). Name cleaning raised Sequoia from 72 to 112 deals. |
 | 6 | **Top funded startups.** Flipkart ($4.76B), Paytm ($3.15B) and Ola ($2.05B) hold about 69% of the top-10 startup funding. |
 | 7 | **Data quality changed the story.** Correcting 11 amounts removed about $5.4B from the total, and without the fix the largest deal in the data would have been a $3.9B Rapido round that never happened at that size. |
+
+
+### Visual summary
+
+<table>
+  <tr>
+    <td width="50%"><img src="images/Year-Wise-Trend.png" alt="Yearly trend" width="100%"><br><b>Year-wise trend:</b> fewer deals, larger median deal size</td>
+    <td width="50%"><img src="images/Industry-Wise_Funding.png" alt="Industry-wise funding" width="100%"><br><b>Industries:</b> eCommerce and Consumer Internet lead</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="images/City-Wise-Funding.png" alt="City-wise funding" width="100%"><br><b>Cities:</b> Bengaluru leads by money, Delhi NCR by deal count</td>
+    <td width="50%"><img src="images/Top-Investors.png" alt="Top investors" width="100%"><br><b>Investors:</b> Sequoia Capital and Accel Partners most active</td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="images/Funding-Stage.png" alt="Median deal size by funding stage" width="100%"><br><b>Funding stage:</b> median deal size grows with each round</td>
+    <td width="50%"><img src="images/Top-Startups.png" alt="Top startups" width="100%"><br><b>Startups:</b> Flipkart, Paytm and Ola are the top three</td>
+  </tr>
+</table>
 
 ---
 

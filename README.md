@@ -221,7 +221,8 @@ SWYNEX-Data-Analyst-Project/
 ├── Task-2/                       # Exploratory Data Analysis
 │   ├── README.md
 │   ├── Indian_Startup_Funding_Exploratory_Data_Analysis.ipynb
-│   └── startup_funding_eda.csv
+│   ├── startup_funding_eda.csv
+│   └── images/                   # 6 charts used in the Task 2 README
 └── Task-3/                       # Interactive Dashboard
     ├── README.md
     ├── Indian_Startup_Funding_Dashboard.pbix

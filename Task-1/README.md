@@ -15,6 +15,14 @@
 
 ---
 
+## Video Walkthrough
+
+| Task | Video |
+|---|---|
+| Task 1: Data Cleaning & Preparation | [Watch on YouTube](https://youtu.be/Uq-i0Zj4JNo) |
+
+---
+
 ## Table of Contents
 1. [Project Overview](#1-project-overview)
 2. [Dataset](#2-dataset)

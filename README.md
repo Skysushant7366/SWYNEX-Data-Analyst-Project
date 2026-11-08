@@ -213,10 +213,10 @@ These are conclusions the data supports. They are not predictions.
 SWYNEX-Data-Analyst-Project/
 ├── README.md                     # This case study
 ├── LICENSE                       # MIT license
+├── startup_funding.csv           # Raw data (untouched), kept at the root
 ├── Task-1/                       # Data Cleaning & Preparation
 │   ├── README.md
 │   ├── Indian_Startup_Funding_Data_Cleaning_&_Preparation.ipynb
-│   ├── startup_funding.csv       # Raw data (untouched)
 │   └── cleaned_startup_funding.csv
 ├── Task-2/                       # Exploratory Data Analysis
 │   ├── README.md
